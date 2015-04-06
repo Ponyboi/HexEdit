@@ -1,0 +1,13 @@
+﻿@*@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<TestingProject.Models.StringBuilderTest>*@
+@model TestingProject.Models.StringBuilderTest
+
+@{
+    //ViewBag.Title = "Index";
+}
+
+<h2>Index Main</h2>
+
+<script>
+    @*@Html.DisplayFor(modelItem => Model.scriptString)*@
+    @Html.Raw(@Model.scriptString)
+</script>

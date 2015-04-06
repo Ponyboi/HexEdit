@@ -1,0 +1,40 @@
+/* @license
+ * MyFonts Webfont Build ID 2683680, 2013-11-07T14:30:16-0500
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Fonce Sans Pro by Ryan Ford
+ * URL: http://www.myfonts.com/fonts/ryanford/fonce-sans-pro/regular/
+ * 
+ * Webfont: Fonce Sans Pro Small Caps by Ryan Ford
+ * URL: http://www.myfonts.com/fonts/ryanford/fonce-sans-pro/small-caps/
+ * 
+ * Webfont: Fonce Sans Pro Light by Ryan Ford
+ * URL: http://www.myfonts.com/fonts/ryanford/fonce-sans-pro/light/
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2683680
+ * Licensed pageviews: 10,000
+ * Webfonts copyright: Copyright (c) Ryan Ford, 2006. All rights reserved.
+ * 
+ * © 2013 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/28f320");
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+  
+@font-face {font-family: 'fonce_sans_proregular';src: url('/fonts/28F320_0_0.eot');src: url('/fonts/28F320_0_0.eot?#iefix') format('embedded-opentype'),url('/fonts/28F320_0_0.woff') format('woff'),url('/fonts/28F320_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'FonceSansPro-SmallCaps';src: url('/fonts/28F320_1_0.eot');src: url('/fonts/28F320_1_0.eot?#iefix') format('embedded-opentype'),url('/fonts/28F320_1_0.woff') format('woff'),url('/fonts/28F320_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'fonce_sans_prolight-Light';src: url('/fonts/28F320_2_0.eot');src: url('/fonts/28F320_2_0.eot?#iefix') format('embedded-opentype'),url('/fonts/28F320_2_0.woff') format('woff'),url('/fonts/28F320_2_0.ttf') format('truetype');}
+ 

@@ -1,0 +1,37 @@
+﻿h1, h2, h3, h4, h5, h6, p
+{
+    font-family: Calibri;
+    color: #0066aa;
+}
+
+p
+{
+    margin: 4px 0px;
+}
+
+.color-container
+{
+    display: block;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: 70px auto 0px auto;
+}
+.color-list-container
+{
+    display: block;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: 30px auto 0px auto;
+}
+.colorbox
+{
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+}
+.selected-colors-header
+{
+}
+.selected-colors-header
+{
+}

@@ -1,0 +1,43 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
+.actionButton-V1 {
+display: inline-block; border-radius: 10px; text-transform: uppercase; color: #fff; font: bold 15px/18px Arial, Helvetica, sans-serif; padding: 10px 26px 10px 15px; /*9px 26px 8px 15px;*/ position: relative; margin-left: 2px; vertical-align: top; background: #bf1e2e;
+}
+
+.actionButton-V2 {
+display: inline-block; vertical-align: top; color: #bf1e2e; font-size: 21px; line-height: 25px; margin: 5px 0 0 41px; position: relative; text-transform: uppercase;
+}
+
+.donationLevelTitle {
+color: #000; font-weight: 500; display: block; margin: 0 0 0px; /*margin: 0 0 23px;*/ font-size: 18px; line-height: 24px;
+}
+
+Contact Info {
+color: #000000; font-size: 10px;
+}
+
+.RotatingBannerActionLink {
+position:absolute; 	content:''; 	top:-7px; 	left:-52px; 	background: url('../images/sprite.png') no-repeat -236px -4px;  	width: 40px;  	height: 40px;
+}
+

@@ -1,0 +1,32 @@
+﻿@model TestingProject.Models.HexData
+@{
+    ViewBag.Title = "HexIndex";
+}
+
+@*<h2>HexIndex</h2>*@
+
+<div class="color-container">
+<h2 class="all-colors-header">All Colors</h2>
+    @foreach (var hexPair in Model.hexColors)
+    {
+        <div class="colorbox" style="background-color: @hexPair.hex;"></div>
+    }
+</div>
+
+<div class="color-container">
+<h2 class="selected-colors-header">Selected Colors</h2>
+<h4>Location: </h4>
+    @foreach (var hexPair in Model.selectedHexColors)
+    {
+        <div class="colorbox" style="background-color: @hexPair.hex;"></div>
+    }
+</div>
+
+<div class="color-list-container">
+<h2 class="selected-colors-header">Selected Color List</h2>
+<h4>Location: </h4>
+    @foreach (var hexPair in Model.selectedHexColors)
+    {
+        <p>@hexPair.fileName [@hexPair.lineNumber] : <span style="color: @hexPair.hex;">@hexPair.hex</span></p> 
+    }
+</div>
