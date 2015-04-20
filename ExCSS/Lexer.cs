@@ -15,6 +15,7 @@ namespace ExCSS
         private bool _ignoreWhitespace;
         private bool _ignoreComments;
         internal Action<ParserError, string> ErrorHandler { get; set; }
+        private int _newLineCounter;
 
         internal Lexer(StylesheetReader source)
         {
@@ -26,10 +27,17 @@ namespace ExCSS
 
         private Block DataBlock(char current)
         {
+            if (_newLineCounter > 0)
+            {
+                _newLineCounter--;
+                return SpecialCharacter.NewLine;
+            }
+
             switch (current)
             {
                 case Specification.LineFeed:
                 case Specification.CarriageReturn:
+                case Specification.FormFeed:
                     return SpecialCharacter.NewLine;
 
                 case Specification.Tab:
@@ -143,9 +151,15 @@ namespace ExCSS
                             }
                             _stylesheetReader.Advance(2);
 
-                            return _ignoreComments
+                            if (current == Specification.LineFeed || current == Specification.CarriageReturn || current == Specification.FormFeed)
+                                return SpecialCharacter.NewLine;
+                            else
+                                return _ignoreComments
                                 ? DataBlock(_stylesheetReader.Next)
                                 : CommentBlock.Close;
+                            //return _ignoreComments
+                            //    ? DataBlock(_stylesheetReader.Next)
+                            //    : CommentBlock.Close;
                         }
 
                         return Block.Delim(current);
@@ -193,9 +207,15 @@ namespace ExCSS
 
                             if (current == Specification.MinusSign)
                             {
-                                return _ignoreComments
+                                if (current == Specification.LineFeed || current == Specification.CarriageReturn || current == Specification.FormFeed)
+                                    return SpecialCharacter.NewLine;
+                                else
+                                    return _ignoreComments
                                     ? DataBlock(_stylesheetReader.Next)
-                                    : CommentBlock.Open;
+                                    : CommentBlock.Close;
+                                //return _ignoreComments
+                                //    ? DataBlock(_stylesheetReader.Next)
+                                //    : CommentBlock.Open;
                             }
 
                             current = _stylesheetReader.Previous;
@@ -448,6 +468,7 @@ namespace ExCSS
             {
                 switch (current)
                 {
+            
                     case Specification.Asterisk:
                         current = _stylesheetReader.Next;
                         if (current == Specification.Solidus)
@@ -469,6 +490,13 @@ namespace ExCSS
                         ErrorHandler(ParserError.EndOfFile, ErrorMessages.ExpectedCommentEnd);
 
                         return DataBlock(current);
+                    case Specification.LineFeed:
+                    case Specification.CarriageReturn:
+                    case Specification.FormFeed:
+                        if (_newLineCounter == 0)
+                            _newLineCounter++;
+                        _newLineCounter++;
+                        break;
                 }
 
                 current = _stylesheetReader.Next;

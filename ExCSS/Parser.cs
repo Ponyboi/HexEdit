@@ -32,7 +32,7 @@ namespace ExCSS
             _functionBuffers = new Stack<FunctionBuffer>();
             _styleSheet = new StyleSheet();
             _activeRuleSets = new Stack<RuleSet>();
-            _lexer = new Lexer(new StylesheetReader(css)) { ErrorHandler = HandleLexerError };
+            _lexer = new Lexer(new StylesheetReader(css)) { ErrorHandler = HandleLexerError, IgnoreComments = false };
             _lineNumber = 0;
 
             SetParsingContext(ParsingContext.DataBlock);
@@ -277,7 +277,7 @@ namespace ExCSS
         private void AddProperty(Property property)
         {
             _property = property;
-            property.LineNumber = _lineNumber;
+            property.LineNumber = _lineNumber+1;
             var rule = CurrentRule as ISupportsDeclarations;
 
             if (rule != null)

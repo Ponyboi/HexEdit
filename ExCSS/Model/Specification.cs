@@ -72,7 +72,7 @@
         internal static bool IsSpaceCharacter(this char c)
         {
             //white space, tab, line feed, form feed, carriage return
-            return c == Space || c == Tab || c == LineFeed || c == FormFeed || c == CarriageReturn;
+            return c == Space || c == Tab; //c == LineFeed || c == CarriageReturn || c == FormFeed
         }
 
         internal static bool IsDigit(this char c)

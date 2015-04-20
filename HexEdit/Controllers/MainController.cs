@@ -6,9 +6,9 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
-using TestingProject.Models;
+using HexEdit.Models;
 
-namespace TestingProject.Controllers
+namespace HexEdit.Controllers
 {
     public class MainController : Controller
     {

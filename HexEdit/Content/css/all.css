@@ -1,7 +1,11 @@
-﻿h1, h2, h3, h4, h5, h6, p
+﻿h1, h2, h3, h4, h5, h6, p, dt
 {
-    font-family: Calibri;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #0066aa;
+}
+body {
+    color: #666;
+    background-color: #eee;
 }
 
 p
@@ -9,19 +13,79 @@ p
     margin: 4px 0px;
 }
 
+.full-height:after {
+    content: " ";
+    background: none repeat scroll 0 0 #eee;
+    border: 1px solid #CCCCCC;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.view {
+    width: 100%;
+    max-width: 1160px;
+    box-sizing: border-box;
+    display: block;
+    padding: 0;
+    position: relative;
+    z-index: 99;
+    margin: 0 auto;
+}
+.view:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.right-column {
+    float: right;
+    height: 100%;
+    width: 68%;
+    max-width: 900px;
+    display: block;
+    position: relative;
+}
+.right-column:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+.right-column:before {
+  content: " ";
+  display: table;
+}
+
+.left-column {
+    float: left;
+    height: 100%;
+    width: 30%;
+    /*min-width: 260px;*/
+    display: block;
+    position: relative;
+}
+.left-column:after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.color-column {
+    
+}
 .color-container
 {
-    display: block;
-    max-width: 900px;
+    display: inline-block;
     padding: 0px 20px;
-    margin: 70px auto 0px auto;
+    margin: 40px auto 0px auto;
 }
 .color-list-container
 {
-    display: block;
-    max-width: 900px;
+    display: inline-block;
     padding: 0px 20px;
-    margin: 30px auto 0px auto;
+    margin: 20px auto 0px auto;
 }
 .colorbox
 {
@@ -34,4 +98,48 @@ p
 }
 .selected-colors-header
 {
+}
+
+/*  Tools  */
+#Tools {
+    height: 100%;
+    display: fixed;
+    /*position: absolute;*/
+    float: left;
+    padding: 0px 20px;
+    margin: 40px auto 0px auto;
+    vertical-align: top;
+}
+.color {
+    display: inline-block;
+    zoom:1; *display: inline;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+    margin: 0 20px;
+    vertical-align: middle;
+}
+.output {
+    display: inline-block;
+    zoom: 1; *display: inline;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.sliders dt,
+.output dt {
+    float: left;
+    clear: left;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+}
+.sliders dd,
+.output dd {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin: 0;
 }

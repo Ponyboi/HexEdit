@@ -6,15 +6,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExCSS;
-using TestingProject.Controllers;
-using TestingProject.Models;
+using HexEdit.Controllers;
+using HexEdit.Models;
+using System.Reflection;
 
-namespace TestingProject.Library
+namespace HexEdit.Library
 {
     class FileParser
     {
         public List<string> fileTypeFilters;
         public List<string> filePaths;
+
+        public static string GetDirPath(string localPath)
+        
+        {
+            //var codeBase = Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase);
+            //UriBuilder uri = new UriBuilder(codeBase);
+            //string outPutDirectory = Uri.UnescapeDataString(uri.Path);
+            //if (outPutDirectory.ToString().IndexOf("/bin") != -1)
+            //    outPutDirectory = Path.GetDirectoryName(outPutDirectory);
+            //string lol = Path.Combine("yo", "sup");
+            //string combinedPath = Path.Combine(outPutDirectory, localPath);
+            //string lol2 = Path.Combine("yo2", "sup");
+            //string path = new Uri(combinedPath).LocalPath;
+            //return path;
+            string combinedPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, localPath);
+            UriBuilder uri = new UriBuilder(combinedPath);
+            string path = Uri.UnescapeDataString(uri.Path);
+            return path;
+        }
 
         public static List<string> RecursiveDirExplore(List<string> paths, List<string> fileTypeFilters)
         {
@@ -135,7 +155,7 @@ namespace TestingProject.Library
                 foreach (Property prop in styleSheetColorProperties)
                 {
                     string hexVal = convertToHex(prop.Term.ToString(), cssFilterValues);
-                    hexNodes.Add(new HexNode(hexVal, prop.Name, styleSheet.Name, prop.LineNumber));
+                    hexNodes.Add(new HexNode(hexVal, prop.Name, styleSheet.Name, prop.LineNumber, prop));
                 }
 
             }
